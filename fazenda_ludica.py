@@ -9,4 +9,14 @@ class Animal:
         return "O animal emite um som."
     
     def apresentar(self):
-        return f"Olá, sou {nome} e tenho {idade} anos."
+        return "Olá, sou {nome} e tenho {idade} anos."
+    
+# Herança e Especialização
+
+class Cachorro(Animal):
+    def __init__(self, raca):
+        super().__init__()
+        self.raca = raca
+
+    def emitir_som(self):
+        return "Au! Au!"
