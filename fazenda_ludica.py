@@ -9,7 +9,7 @@ class Animal:
         return "O animal emite um som."
     
     def apresentar(self):
-        return "Olá, sou {nome} e tenho {idade} anos."
+        print(f"Olá, sou {self.nome} e tenho {self.idade} anos.")
     
 # Herança e Especialização
 
@@ -54,3 +54,14 @@ lista_animais = [cachorro, gato, vaca]
 for animais in lista_animais:
     print(animais.apresentar())
     print(animais.emitir_som())
+
+# Teste de Encapsulamento
+
+# Para o objeto Vaca, imprima a produção atual utilizando o método getter:
+print(f"Produção atual de leite: {vaca.obter_producao_leite()} litros")
+
+# Chame o método registrar_ordenha() para mudar a produção de leite (ex: para 28.0 litros):
+vaca.registrar_ordenha(28.0)
+
+# Imprima novamente a produção de leite para confirmar a mudança:
+print(f"Produção de leite após ordenha: {vaca.obter_producao_leite()} litros")
