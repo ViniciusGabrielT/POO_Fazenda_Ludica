@@ -1,5 +1,3 @@
-# Abstração e Classe Base (Animal)
-
 class Animal:
     def __init__(self, nome, idade):
         self.nome = nome
@@ -11,8 +9,6 @@ class Animal:
     def apresentar(self):
         print(f"Olá, sou {self.nome} e tenho {self.idade} anos.")
     
-# Herança e Especialização
-
 class Cachorro(Animal):
     def __init__(self, nome, idade, raca):
         super().__init__(nome, idade)
@@ -37,13 +33,11 @@ class Vaca(Animal):
     def emitir_som(self):
         return "Muuu!"
     
-    def obter_producao_leite(self): # getter
+    def obter_producao_leite(self):
         return self.__producao_leite_litros
     
-    def registrar_ordenha(self, litros): # setter
+    def registrar_ordenha(self, litros):
         self.__producao_leite_litros = litros
-
-# Teste e Demonstração
 
 cachorro = Cachorro("Rex", 3, "Labrador")
 gato = Gato("Mimi", 5, "Branco")
@@ -55,13 +49,8 @@ for animais in lista_animais:
     print(animais.apresentar())
     print(animais.emitir_som())
 
-# Teste de Encapsulamento
-
-# Para o objeto Vaca, imprima a produção atual utilizando o método getter:
 print(f"Produção atual de leite: {vaca.obter_producao_leite()} litros")
 
-# Chame o método registrar_ordenha() para mudar a produção de leite (ex: para 28.0 litros):
 vaca.registrar_ordenha(28.0)
 
-# Imprima novamente a produção de leite para confirmar a mudança:
 print(f"Produção de leite após ordenha: {vaca.obter_producao_leite()} litros")
