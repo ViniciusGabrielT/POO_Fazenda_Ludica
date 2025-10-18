@@ -14,24 +14,24 @@ class Animal:
 # Herança e Especialização
 
 class Cachorro(Animal):
-    def __init__(self, raca):
-        super().__init__()
+    def __init__(self, nome, idade, raca):
+        super().__init__(nome, idade)
         self.raca = raca
 
     def emitir_som(self):
         return "Au! Au!"
     
 class Gato(Animal):
-    def __init__(self, cor_pelo):
-        super().__init__()
+    def __init__(self, nome, idade, cor_pelo):
+        super().__init__(nome, idade)
         self.cor_pelo = cor_pelo
 
     def emitir_som(self):
         return "Miau!"
     
 class Vaca(Animal):
-    def __init__(self, producao_leite_litros):
-        super().__init__()
+    def __init__(self, nome, idade, producao_leite_litros):
+        super().__init__(nome, idade)
         self.__producao_leite_litros = producao_leite_litros
 
     def emitir_som(self):
@@ -48,3 +48,9 @@ class Vaca(Animal):
 cachorro = Cachorro("Rex", 3, "Labrador")
 gato = Gato("Mimi", 5, "Branco")
 vaca = Vaca("Mimosa", 7, 25.5)
+
+lista_animais = [cachorro, gato, vaca]
+
+for animais in lista_animais:
+    print(animais.apresentar())
+    print(animais.emitir_som())
